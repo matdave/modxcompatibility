@@ -11,18 +11,14 @@ class CheckExtras
     public $modx;
 
     /** @var MODxCompatibility */
-    protected $modxcompatibility;
+    public $modxcompatibility;
 
-    public $scriptProperties;
+    public array $scriptProperties;
 
-    /**
-     * Endpoint constructor.
-     * @param MODxCompatibility $modxcompatibility
-     */
-    public function __construct(MODxCompatibility &$modxcompatibility, array $scriptProperties = [])
+    public function __construct(\MODxCompatibility &$modxcompatibility, array $scriptProperties = [])
     {
         $this->modxcompatibility =& $modxcompatibility;
-        $this->modx =& $this->modxcompatibility->modx;
+        $this->modx =& $modxcompatibility->modx;
         $this->scriptProperties = $scriptProperties;
     }
 
@@ -49,15 +45,15 @@ class CheckExtras
                 ];
             }
         }
-        return [
+        return json_encode([
             'success' => true,
             'total' => $packages['total'],
-            'results' => $packs
-            ];
+            'message' => '',
+            'results' => array_values($packs),
+        ], true);
     }
 
-
-    private function formatVersion($version)
+    private function formatVersion($version): string
     {
         if($version === '10000000') {
             return 'latest';
@@ -69,7 +65,8 @@ class CheckExtras
         }
     }
 
-    private function checkForUpdates($package, $providerCache = []){
+    private function checkForUpdates($package, $providerCache = []): array
+    {
         $updates = [];
         if ($package->get('provider') > 0 && $this->modx->getOption('auto_check_pkg_updates',null,false)) {
             $updateCacheKey = 'mgr/providers/updateinfo/'.$package->get('provider').'/'.$package->get('signature');
@@ -107,7 +104,8 @@ class CheckExtras
         return $updates;
     }
 
-    private function checkInfo($package, $providerCache = []){
+    private function checkInfo($package, $providerCache = []): array
+    {
         $info = [];
         if ($package->get('provider') > 0 && $this->modx->getOption('auto_check_pkg_updates',null,false)) {
             $infoCacheKey = 'mgr/providers/info/'.$package->get('provider').'/'.$package->get('signature');

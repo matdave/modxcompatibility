@@ -28,12 +28,26 @@ modxcompatibility.grid.Extras = function(config) {
             ,width: 150
             ,sortable: false
             ,hidden: false
+            ,renderer: function(value, metaData, record, rowIndex, colIndex, store) {
+                return _('modxcompatibility.extras.version') + ': '+ value.version + ' ' + _('modxcompatibility.extras.supported') + ': '+ value.breaks_at;
+            }
         },{
             header: _('modxcompatibility.extras.update')
             ,dataIndex: 'update'
             ,width: 150
             ,sortable: true
             ,hidden: false
+            ,renderer: function(value, metaData, record, rowIndex, colIndex, store) {
+                if (value.length){
+                    return '';
+                } else {
+                    var update = '';
+                    Array.forEach(value, function(item, index){
+                        update += _('modxcompatibility.extras.version') + ': '+ item.version + ' ' + _('modxcompatibility.extras.supported') + ': '+ item.breaks_at + '<br />';
+                    });
+                    return update;
+                }
+            }
         }]
         ,tbar: [
             {
