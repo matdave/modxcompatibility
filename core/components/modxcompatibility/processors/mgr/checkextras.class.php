@@ -8,7 +8,7 @@ class modxCompatibilityCheckExtrasProcessor extends modProcessor {
 
     public function process()
     {
-        $checkExtras = new CheckExtras($this->modx, $this->getProperties());
+        $checkExtras = new CheckExtras($this->modx->modxcompatibility, $this->getProperties());
         return $checkExtras->run();
     }
 }
