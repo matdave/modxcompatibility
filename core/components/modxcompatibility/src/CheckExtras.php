@@ -74,8 +74,8 @@ class CheckExtras
         if ($package->get('provider') > 0 && $this->modx->getOption('auto_check_pkg_updates',null,false)) {
             $updateCacheKey = 'mgr/providers/updateinfo/'.$package->get('provider').'/'.$package->get('signature');
             $updateCacheOptions = [
-                xPDO::OPT_CACHE_KEY => $this->modx->cacheManager->getOption('cache_packages_key', null, 'packages'),
-                xPDO::OPT_CACHE_HANDLER => $this->modx->cacheManager->getOption('cache_packages_handler', null, $this->modx->cacheManager->getOption(xPDO::OPT_CACHE_HANDLER)),
+                \xPDO::OPT_CACHE_KEY => $this->modx->cacheManager->getOption('cache_packages_key', null, 'packages'),
+                \xPDO::OPT_CACHE_HANDLER => $this->modx->cacheManager->getOption('cache_packages_handler', null, $this->modx->cacheManager->getOption(\xPDO::OPT_CACHE_HANDLER)),
             ];
             $updates = $this->modx->cacheManager->get($updateCacheKey, $updateCacheOptions);
             if (empty($updates)) {
@@ -112,8 +112,8 @@ class CheckExtras
         if ($package->get('provider') > 0 && $this->modx->getOption('auto_check_pkg_updates',null,false)) {
             $infoCacheKey = 'mgr/providers/info/'.$package->get('provider').'/'.$package->get('signature');
             $infoCacheOptions = [
-                xPDO::OPT_CACHE_KEY => $this->modx->cacheManager->getOption('cache_packages_key', null, 'packages'),
-                xPDO::OPT_CACHE_HANDLER => $this->modx->cacheManager->getOption('cache_packages_handler', null, $this->modx->cacheManager->getOption(xPDO::OPT_CACHE_HANDLER)),
+                \xPDO::OPT_CACHE_KEY => $this->modx->cacheManager->getOption('cache_packages_key', null, 'packages'),
+                \xPDO::OPT_CACHE_HANDLER => $this->modx->cacheManager->getOption('cache_packages_handler', null, $this->modx->cacheManager->getOption(\xPDO::OPT_CACHE_HANDLER)),
             ];
             $info = $this->modx->cacheManager->get($infoCacheKey, $infoCacheOptions);
             if (empty($info)) {
