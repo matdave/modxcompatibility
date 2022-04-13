@@ -35,7 +35,7 @@ modxcompatibility.grid.Extras = function(config) {
                 return _('modxcompatibility.extras.supported') + value.breaks_at;
             }
         },{
-            header: _('modxcompatibility.extras.update')
+            header: _('modxcompatibility.extras.updates')
             ,dataIndex: 'update'
             ,width: 150
             ,sortable: false
@@ -46,7 +46,7 @@ modxcompatibility.grid.Extras = function(config) {
                 } else {
                     var update = '';
                     value.forEach(function(item, index){
-                        update += _('modxcompatibility.extras.version') + item.version + ' ' + _('modxcompatibility.extras.supported') + item.breaks_at + '<br />';
+                        update += _('modxcompatibility.extras.version') + item.version + ' ' + _('modxcompatibility.extras.supported') + item.breaks_at + ' <a href="?a=workspace">' + _('modxcompatibility.extras.update') + '</a><br />';
                     });
                     return update;
                 }
