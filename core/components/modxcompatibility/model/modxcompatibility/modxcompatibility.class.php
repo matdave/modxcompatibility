@@ -33,4 +33,19 @@ class MODxCompatibility
     {
         require_once $this->getOption('corePath') . 'vendor/autoload.php';
     }
+    
+    public function getOption($key, $options = array(), $default = null)
+    {
+        $option = $default;
+        if (!empty($key) && is_string($key)) {
+            if ($options != null && array_key_exists($key, $options)) {
+                $option = $options[$key];
+            } elseif (array_key_exists($key, $this->options)) {
+                $option = $this->options[$key];
+            } elseif (array_key_exists("{$this->namespace}.{$key}", $this->modx->config)) {
+                $option = $this->modx->getOption("{$this->namespace}.{$key}");
+            }
+        }
+        return $option;
+    }
 }
