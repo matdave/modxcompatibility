@@ -29,6 +29,9 @@ modxcompatibility.grid.Extras = function(config) {
             ,sortable: false
             ,hidden: false
             ,renderer: function(value, metaData, record, rowIndex, colIndex, store) {
+                if(!value.version || value.breaks_at){
+                    return _('modxcompatibility.extras.version');
+                }
                 return _('modxcompatibility.extras.version') + ': '+ value.version + ' ' + _('modxcompatibility.extras.supported') + ': '+ value.breaks_at;
             }
         },{
@@ -38,7 +41,7 @@ modxcompatibility.grid.Extras = function(config) {
             ,sortable: true
             ,hidden: false
             ,renderer: function(value, metaData, record, rowIndex, colIndex, store) {
-                if (value.length){
+                if (!value.length){
                     return '';
                 } else {
                     var update = '';
