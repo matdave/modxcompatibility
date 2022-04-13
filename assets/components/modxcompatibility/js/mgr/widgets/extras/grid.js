@@ -15,13 +15,13 @@ modxcompatibility.grid.Extras = function(config) {
             ,dataIndex: 'signature'
             ,width: 70
             ,hidden: true
-            ,sortable: true
+            ,sortable: false
         },{
             header: _('modxcompatibility.extras.package_name')
             ,dataIndex: 'package_name'
             ,width: 200
             ,hidden: false
-            ,sortable: true
+            ,sortable: false
         },{
             header: _('modxcompatibility.extras.info')
             ,dataIndex: 'info'
@@ -32,13 +32,13 @@ modxcompatibility.grid.Extras = function(config) {
                 if(!value.version || !value.breaks_at){
                     return _('modxcompatibility.extras.unsure');
                 }
-                return _('modxcompatibility.extras.version') + ': '+ value.version + ' ' + _('modxcompatibility.extras.supported') + ': '+ value.breaks_at;
+                return _('modxcompatibility.extras.supported') + value.breaks_at;
             }
         },{
             header: _('modxcompatibility.extras.update')
             ,dataIndex: 'update'
             ,width: 150
-            ,sortable: true
+            ,sortable: false
             ,hidden: false
             ,renderer: function(value, metaData, record, rowIndex, colIndex, store) {
                 if (!value.length){
@@ -46,7 +46,7 @@ modxcompatibility.grid.Extras = function(config) {
                 } else {
                     var update = '';
                     value.forEach(function(item, index){
-                        update += _('modxcompatibility.extras.version') + ': '+ item.version + ' ' + _('modxcompatibility.extras.supported') + ': '+ item.breaks_at + '<br />';
+                        update += _('modxcompatibility.extras.version') + item.version + ' ' + _('modxcompatibility.extras.supported') + item.breaks_at + '<br />';
                     });
                     return update;
                 }
