@@ -1,0 +1,16 @@
+{
+  "name": "MODXCompatability",
+  "lowCaseName": "modxcompatability",
+  "description": "",
+  "author": "matdave",
+  "version": "1.0.0-beta",
+  "package": {
+    "menus": [
+      {
+        "text": "modxcompatability.menu.extras",
+        "description": "modxcompatability.menu.extras_desc",
+        "action": "subscriptions"
+      }
+    ]
+  }
+}
