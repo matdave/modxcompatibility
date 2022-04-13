@@ -12,3 +12,4 @@ class modxCompatibilityCheckExtrasProcessor extends modProcessor {
         return $checkExtras->run();
     }
 }
+return 'modxCompatibilityCheckExtrasProcessor';

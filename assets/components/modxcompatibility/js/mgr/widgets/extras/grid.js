@@ -38,7 +38,7 @@ modxcompatibility.grid.Extras = function(config) {
         ,tbar: [
             {
                 xtype: 'textfield'
-                ,emptyText: _('modxcompatibility.global.search') + '...'
+                ,emptyText: _('modxcompatibility.extras.search') + '...'
                 ,name: 'search'
                 ,listeners: {
                     'change': {fn: this.filterGrid, scope: this}
