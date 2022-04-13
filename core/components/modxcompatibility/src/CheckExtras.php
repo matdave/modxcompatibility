@@ -31,7 +31,7 @@ class CheckExtras
         $packs = [];
         $providerCache = [];
         $packages = $this->modx->call('transport.modTransportPackage', 'listPackages', [
-            $this->modx,
+            &$this->modx,
             $this->modx->getOption('workspace',$this->scriptProperties,1),
             $this->modx->getOption('total',$this->scriptProperties,20),
             $this->modx->getOption('start',$this->scriptProperties,0),
