@@ -13,7 +13,7 @@ class CheckExtras
     /** @var MODxCompatibility */
     public $modxcompatibility;
 
-    public array $scriptProperties;
+    public $scriptProperties;
 
     public function __construct(\MODxCompatibility &$modxcompatibility, array $scriptProperties = [])
     {
