@@ -56,7 +56,7 @@ class CheckExtras
     private function formatVersion($version): string
     {
         if($version === '10000000') {
-            return 'latest';
+            return $this->modx->lexicon('modxcompatibility.extras.latest');
         }
         if(strpos($version, '.') !== false){
             return $version.'.x';

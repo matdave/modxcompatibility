@@ -11,5 +11,6 @@ $_lang['modxcompatibility.extras.info'] = 'Installed Compatibility';
 $_lang['modxcompatibility.extras.update'] = 'Updates';
 $_lang['modxcompatibility.extras.search'] = 'Search Extras';
 $_lang['modxcompatibility.extras.version'] = 'Version';
-$_lang['modxcompatibility.extras.supported'] = 'Max Compatibility w/';
+$_lang['modxcompatibility.extras.supported'] = 'Max Compatibility w/ ';
 $_lang['modxcompatibility.extras.unsure'] = 'Unsure';
+$_lang['modxcompatibility.extras.latest'] = 'Latest MODX';
