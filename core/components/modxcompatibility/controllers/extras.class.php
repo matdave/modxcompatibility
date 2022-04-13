@@ -1,7 +1,7 @@
 <?php
 require_once dirname(dirname(__FILE__)) . '/index.class.php';
 
-class MODxCompatibilityExtrasManagerController extends MODxCompatibilityManagerControllerCore
+class MODxCompatibilityExtrasManagerController extends MODxCompatibilityBaseManagerController
 {
     public function process(array $scriptProperties = array())
     {
