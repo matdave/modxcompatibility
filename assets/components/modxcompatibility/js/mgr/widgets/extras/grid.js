@@ -42,7 +42,7 @@ modxcompatibility.grid.Extras = function(config) {
                     return '';
                 } else {
                     var update = '';
-                    Array.forEach(value, function(item, index){
+                    value.forEach(function(item, index){
                         update += _('modxcompatibility.extras.version') + ': '+ item.version + ' ' + _('modxcompatibility.extras.supported') + ': '+ item.breaks_at + '<br />';
                     });
                     return update;
