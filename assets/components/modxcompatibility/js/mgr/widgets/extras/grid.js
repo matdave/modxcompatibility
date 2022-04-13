@@ -4,7 +4,7 @@ modxcompatibility.grid.Extras = function(config) {
     Ext.applyIf(config,{
         url: modxcompatibility.config.connectorUrl
         ,baseParams: {
-            action: 'checkextras'
+            action: 'mgr/checkextras'
         }
         ,fields: ['signature','package_name', 'info', 'update']
         ,autoHeight: true
