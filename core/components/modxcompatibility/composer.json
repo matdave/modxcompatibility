@@ -1,7 +1,10 @@
 {
   "autoload": {
     "psr-4": {
-      "MODxCompatibility\\": "src/"
+      "ModxCompatibility\\": "src/"
     }
+  },
+  "require-dev": {
+    "modx/revolution": "^3.0"
   }
 }

@@ -1,0 +1,1 @@
+Test for compatibility with the latest version of MODX.

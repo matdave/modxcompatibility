@@ -1,24 +1,25 @@
 <?php
 
-namespace ModxCompatibility;
+namespace ModxCompatibility\v2;
 
 use MODX\Revolution\modX;
-use MODxCompatibility;
+use MODX\Revolution\Transport\modTransportProvider;
+
 
 class CheckExtras
 {
     /** @var modX $modx */
     public $modx;
 
-    /** @var MODxCompatibility */
-    public $modxcompatibility;
+    /** @var \MODxCompatibility */
+    public $mc;
 
     public $scriptProperties;
 
-    public function __construct(\MODxCompatibility &$modxcompatibility, array $scriptProperties = [])
+    public function __construct(\MODxCompatibility &$mc, array $scriptProperties = [])
     {
-        $this->modxcompatibility =& $modxcompatibility;
-        $this->modx =& $modxcompatibility->modx;
+        $this->mc =& $mc;
+        $this->modx =& $mc->modx;
         $this->scriptProperties = $scriptProperties;
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-use MODxCompatibility\CheckExtras;
+use ModxCompatibility\v2\CheckExtras;
 
 class modxCompatibilityCheckExtrasProcessor extends modProcessor {
     public $languageTopics = 'modxcompatibility:default';

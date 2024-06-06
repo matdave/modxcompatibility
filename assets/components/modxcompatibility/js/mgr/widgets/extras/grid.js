@@ -2,9 +2,9 @@ modxcompatibility.grid.Extras = function(config) {
     config = config || {};
 
     Ext.applyIf(config,{
-        url: modxcompatibility.config.connectorUrl
+        url: modxcompatibility.config.connector_url
         ,baseParams: {
-            action: 'mgr/checkextras'
+            action: modxcompatibility.config.version > 2 ? 'ModxCompatibility\\v3\\Processors\\CheckExtras' : 'mgr/checkextras'
         }
         ,fields: ['signature','package_name', 'info', 'update']
         ,autoHeight: true
